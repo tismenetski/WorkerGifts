@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="<?php echo asset('assets/image/favicon-32x32.png'); ?>">
 
     @yield('scripts')
 </head>
@@ -15,7 +16,7 @@
         <div class="navbar-nav">
             <a class="nav-item nav-link" href="{{route('dashboard')}}">Dashboard</a>
             <a class="nav-item nav-link" href="{{route('importExcel')}}">Import Excel</a>
-            <a class="nav-item nav-link" href="#">Available Gifts</a>
+            <a class="nav-item nav-link" href="{{route('availableGifts')}}">Available Gifts</a>
         </div>
     </div>
 </nav>

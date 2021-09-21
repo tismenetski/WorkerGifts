@@ -18,7 +18,8 @@ class CreateGiftsTable extends Migration
             $table->string('name')->unique();
             $table->text('description');
             $table->float('value');
-            $table->bigInteger('gift_category_id')->unsigned();
+            $table->string('image')->nullable();
+            $table->bigInteger('gift_category_id')->unsigned()->nullable();
             $table->foreign('gift_category_id')->references('id')->on('gift_categories')->onDelete('cascade');
             $table->timestamps();
         });

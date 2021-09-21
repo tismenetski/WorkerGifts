@@ -1,9 +1,4 @@
 @extends('admin.layouts.app')
-
-@section('scripts')
-
-@endsection
-
 @section('content')
     <h1 class="mt-4 p-4">Hello {{config('app.app_admin')}}</h1>
 {{--    {{dump($workers)}}--}}

@@ -27,6 +27,6 @@ class AdminExcelController extends Controller
 
         Excel::import(new WorkersImport,request()->file('file'));
 
-        return back()->with('success', 'User Imported Successfully.');
+        return redirect()->route('dashboard')->with('success', 'User Imported Successfully.');
     }
 }

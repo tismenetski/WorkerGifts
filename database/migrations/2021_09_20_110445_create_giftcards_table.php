@@ -18,6 +18,7 @@ class CreateGiftcardsTable extends Migration
             $table->date('issued_at');
             $table->date('valid_until');
             $table->float('amount');
+            $table->boolean('used')->default(0);
             $table->bigInteger('worker_id')->unsigned()->unique()->nullable();
             $table->foreign('worker_id')->references('id')->on('workers')->onDelete('cascade');
             $table->timestamps();
