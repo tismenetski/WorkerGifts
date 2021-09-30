@@ -3,11 +3,11 @@
     <div class="container mx-auto">
     <h1 class="text-center mt-4">Gifts</h1>
         <a class="btn-success mt-4 mx-auto btn-lg d-inline-block text-decoration-none pointer-event" href="{{route('addGift')}}">Add Gifts</a>
-        {{dump($gifts)}}
+{{--        {{dump($gifts)}}--}}
         @if(empty($gifts) || sizeof($gifts) == 0)
             <h1>No Gifts available, please add gifts</h1>
         @else
-        <table class="table table-bordered">
+        <table class="table table-bordered mt-4">
             <thead class="thead-light">
             <tr class="text-center">
                 <th>ID</th>
@@ -22,7 +22,7 @@
             </thead>
             <tbody>
             @foreach($gifts as $gift)
-                <tr class="text-center">
+                <tr class="text-center align-middle">
                     <td>
                         {{$gift->id}}
                     </td>
@@ -36,7 +36,7 @@
                         {{$gift->value}}
                     </td>
                     <td>
-                        {{$gift->image ??  ""}}
+                        <img src="{{URL::asset('/gifts/'. $gift->image)}}" alt="">
                     </td>
                     <td>
                         {{$gift->category->name ?? ""}}
@@ -45,7 +45,7 @@
                         <a href="{{route('editGift',['id' => $gift->id])}}" class="btn btn-primary pointer-event">Edit</a>
                     </td>
                     <td>
-                        <a href="#" class="btn btn-danger pointer-event">Delete</a>
+                        <a href="{{route('deleteGift',['id' => $gift->id])}}" class="btn btn-danger pointer-event">Delete</a>
                     </td>
                 </tr>
             @endforeach

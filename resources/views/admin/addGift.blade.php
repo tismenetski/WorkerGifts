@@ -11,7 +11,7 @@
                 </ul>
             </div>
             @endif
-        <form method="POST" action="{{route('storeGift')}}" enctype="multipart/form-data">
+        <form id="addGift"   method="POST" action="{{route('storeGift')}}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Gift Name</label>
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label for="description" class="mt-2">Description</label>
-                <textarea class="form-control" id="description"></textarea>
+                <textarea  form="addGift" class="form-control" id="description"  name="description"></textarea>
             </div>
             <div class="form-group">
                 <label for="value" class="mt-2">Value</label>
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="image" class="mt-2">Image</label>
-                <input type="file" class="form-control" id="image">
+                <input type="file" class="form-control" id="image" name="image">
             </div>
             <div class="form-group">
                 <label for="gift_category" class="mt-2">Category</label>

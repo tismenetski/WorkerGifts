@@ -28,6 +28,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/gifts/addGift', [GiftController::class,'create'])->name('addGift');
     Route::post('/gifts/addGift',[GiftController::class,'store'])->name('storeGift');
     Route::get('/gifts/editGift/{id}',[GiftController::class,'edit'])->name('editGift');
+    Route::post('/gifts/updateGift', [GiftController::class,'update'])->name('updateGift');
+    Route::get('/gifts/deleteGift/{id}',[GiftController::class,'delete'])->name('deleteGift');
 
 });
 
